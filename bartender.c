@@ -18,10 +18,10 @@
  * Code for bartender thread.
  * Do not touch.
  */
-void* bartender(void* args)
+void *bartender(void *args)
 {
 	int i;
-	for (i = 0; i<num_threads; i++)
+	for (i = 0; i < num_threads; i++)
 	{
 		waitForCustomer();
 		makeDrink();
@@ -35,10 +35,9 @@ void* bartender(void* args)
  */
 void waitForCustomer()
 {
-	//TODO - synchronize
+	// TODO - synchronize
 	printf("\t\t\t\t\t\t\t\t\t\t\t| Bartender\n");
 }
-
 
 /**
  * When a customer places an order it takes the Bartender
@@ -46,20 +45,19 @@ void waitForCustomer()
  */
 void makeDrink()
 {
-	//TODO - synchronize
+	// TODO - synchronize
 	printf("\t\t\t\t\t\t\t\t\t\t\t| \t\tBartender\n");
 }
-
 
 /**
  * Gets payment from the correct customer
  */
 void receivePayment()
 {
-	//TODO - synchronize
-	//at the register waiting for customer to pay
+	// TODO - synchronize
+	// at the register waiting for customer to pay
 	printf("\t\t\t\t\t\t\t\t\t\t\t| \t\t\t\tBartender\n");
 
-	//got the payment from the right customer!
+	// got paid by the customer!
 	printf("\t\t\t\t\t\t\t\t\t\t\t| \t\t\t\t\t\tBartender\n");
 }
