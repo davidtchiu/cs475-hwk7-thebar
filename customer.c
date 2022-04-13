@@ -5,7 +5,6 @@
  *      Author: dchiu
  */
 
-
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,28 +18,26 @@
  * This is what the thread will call.
  * Do not touch.
  */
-void* customer(void* args)
+void *customer(void *args)
 {
-	unsigned int *custID = (unsigned int*) args;
+	unsigned int *custID = (unsigned int *)args;
 	custTravelToBar(*custID);
 	custArriveAtBar(*custID);
-	custPlaceOrder();
-	custBrowseArt();
-	custAtRegister();
-	custLeaveBar();
+	custPlaceOrder(*custID);
+	custBrowseArt(*custID);
+	custAtRegister(*custID);
+	custLeaveBar(*custID);
 	return NULL;
 }
-
 
 /**
  * Each customer takes a random amount of time between 20 ms and 5000 ms to travel to the bar.
  */
 void custTravelToBar(unsigned int custID)
 {
-	//TODO - synchronize
+	// TODO - synchronize
 	printf("Cust %u\t\t\t\t\t\t\t\t\t\t\t|\n", custID);
 }
-
 
 /**
  * If there is already another customer in the bar the current customer has
@@ -48,48 +45,44 @@ void custTravelToBar(unsigned int custID)
  */
 void custArriveAtBar(unsigned int custID)
 {
-	//TODO - synchronize
+	// TODO - synchronize
 	printf("\t\tCust %u\t\t\t\t\t\t\t\t\t|\n", custID);
 }
-
 
 /**
  * The customer in the bar places an order
  */
-void custPlaceOrder()
+void custPlaceOrder(unsigned int custID)
 {
-	//TODO - synchronize
-	printf("\t\t\t\tCust %u\t\t\t\t\t\t\t|\n", now_serving);
+	// TODO - synchronize
+	printf("\t\t\t\tCust %u\t\t\t\t\t\t\t|\n", custID);
 }
-
 
 /**
  * The customer in the bar can browse the wall art for a random amount of time between 3ms and 4000ms.
  */
-void custBrowseArt()
+void custBrowseArt(unsigned int custID)
 {
-	//TODO - synchronize
-	printf("\t\t\t\t\t\tCust %u\t\t\t\t\t|\n", now_serving);
+	// TODO - synchronize
+	printf("\t\t\t\t\t\tCust %u\t\t\t\t\t|\n", custID);
 }
-
 
 /**
  * If their drink is not ready by the time they are done admiring the art they must wait
  * until the bartender has finished. When the bartender is finished, the customer pays.
  *
  */
-void custAtRegister()
+void custAtRegister(unsigned int custID)
 {
-	//TODO - synchronize
-	printf("\t\t\t\t\t\t\t\tCust %u\t\t\t|\n", now_serving);
+	// TODO - synchronize
+	printf("\t\t\t\t\t\t\t\tCust %u\t\t\t|\n", custID);
 }
-
 
 /**
  * The customer in the bar leaves the bar.
  */
-void custLeaveBar()
+void custLeaveBar(unsigned int custID)
 {
-	//TODO - synchronize
-	printf("\t\t\t\t\t\t\t\t\t\tCust %u\t|\n", now_serving);
+	// TODO - synchronize
+	printf("\t\t\t\t\t\t\t\t\t\tCust %u\t|\n", custID);
 }

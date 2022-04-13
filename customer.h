@@ -8,13 +8,12 @@
 #ifndef CUSTOMER_H_
 #define CUSTOMER_H_
 
-
-void* customer(void* args);
+void *customer(void *args);
 void custTravelToBar(unsigned int custID);
 void custArriveAtBar(unsigned int custID);
-void custPlaceOrder();
-void custBrowseArt();
-void custAtRegister();
-void custLeaveBar();
+void custPlaceOrder(unsigned int custID);
+void custBrowseArt(unsigned int custID);
+void custAtRegister(unsigned int custID);
+void custLeaveBar(unsigned int custID);
 
 #endif /* CUSTOMER_H_ */
